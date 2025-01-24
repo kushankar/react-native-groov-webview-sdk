@@ -1,0 +1,33 @@
+{
+  "name": "react-native-groov-sdk",
+  "version": "0.0.5",
+  "description": "Groov sdk for the webview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kushankar/react-native-groov-sdk.git"
+  },
+  "keywords": [
+    "groov",
+    "webview",
+    "sdk"
+  ],
+  "author": "uma shankar kathinokkula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kushankar/react-native-groov-sdk/issues"
+  },
+  "homepage": "https://github.com/kushankar/react-native-groov-sdk#readme",
+  "peerDependencies": {
+    "react": "18.3.1",
+    "react-native": "0.76.5",
+    "react-native-get-random-values": "~1.11.0",
+    "uuid": "^11.0.3",
+    "react-native-webview": "13.12.5",
+    "axios": "^1.7.9",
+    "@react-navigation/native": "^7.0.14"
+  }
+}
