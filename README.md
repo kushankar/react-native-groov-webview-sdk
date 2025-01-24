@@ -5,9 +5,12 @@ It's simple and easy to integrate. Please follow the below steps.
 
 1. Add groov webview npm package - npm i react-native-groov-sdk
 2. Add Groov Configuration - Using groov-webview-config.js file, pass the necessary configuration details to the GroovWebView component
-3. Add import react-native-groov-sdk - 
+3. Add import react-native-groov-sdk -
+ 
 	import { GroovWebView } from 'react-native-groov-sdk';
+	
 	import * as GrooWebViewConfig from '../../../groov-webview-config';
+	
 4. Invoke GroovWebView - Call GroovWebView component 
 	<GroovWebView
             externalUserId={GrooWebViewConfig.externalUserId}
