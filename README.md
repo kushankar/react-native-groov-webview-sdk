@@ -21,3 +21,7 @@ It's simple and easy to integrate. Please follow the below steps.
 		c. authKey - Auth Key for the API (Example - x-api-key, bearer token, etc)
 		d. apiKey - API key for the Groov institution
 		e. containerStyle(Optional) - Users can customise the container style, if not provided it picks the default styling
+		
+Modal 
+
+![alt text](https://github.com/kushankar/react-native-groov-webview-sdk/blob/master/groovMobileView.png?raw=true)
