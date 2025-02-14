@@ -7,37 +7,38 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as config from './config';
 
-export function GroovWebView({ externalUserId, appServerUri, authKey, apiKey, containerStyle = {} }) {
-    const [groovEmbedUrl, setGroovEmbedUrl] = useState(null);
+export function GroovWebView({ appServerUri, authKey, apiKey, operationType, containerStyle = {} }) {
+    const [groovEmbedComponentUrl, setGroovEmbedComponentUrl] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetchMerchantDetails();
+        registerWidgetAndLoadGroovEmbedComponent();
     }, []);
 
-    async function fetchMerchantDetails() {
+    async function registerWidgetAndLoadGroovEmbedComponent() {
         try {
-            const uuid = uuidv4();
-            const uri = `${normalizeUrl(appServerUri)}/${externalUserId}/${uuid}`;
-            await axios.put(uri, null, {
-                headers: {
-                    [authKey]: apiKey,
-                },
-            });
+            const gWidgetId = uuidv4();
+            const institutionWidgetRegistrarEndpoint = `${normalizeUrl(appServerUri)}/${gWidgetId}`;
+            const headers = { [authKey]: apiKey };
+            const method = operationType.toLowerCase();
+
+            if (method === "get") {
+                await axios.get(institutionWidgetRegistrarEndpoint, { headers });
+            } else if (method === "put") {
+                await axios.put(institutionWidgetRegistrarEndpoint, null, { headers });
+            } else if (method === "post") {
+                await axios.post(institutionWidgetRegistrarEndpoint, null, { headers });
+            }
+
             const response = await axios.get(config.GROOV_URI, {
-                headers: {
-                    [config.GROOV_AUTH_KEY]: uuid,
-                },
+                headers: { [config.GROOV_AUTH_KEY]: gWidgetId },
             });
-            setGroovEmbedUrl(response.data.campaign.groovEmbedUrl);
+
+            setGroovEmbedComponentUrl(response.data.campaign.groovEmbedUrl);
         } catch (err) {
-            console.error('Error while fetching Groov Embed URL:', {
-                message: err.message,
-                stack: err.stack,
-                response: err.response?.data,
-            });
-            setError('Failed to load the Groov WebView. Please try again later.');
+            console.error("Error while fetching Groov Embed URL:", err);
+            setError("Failed to load Groov Widget. Please try again later.");
         } finally {
             setLoading(false);
         }
@@ -66,7 +67,7 @@ export function GroovWebView({ externalUserId, appServerUri, authKey, apiKey, co
     return (
         <View style={[styles.defaultContainer, containerStyle]}>
             <WebView
-                source={{ uri: groovEmbedUrl }}
+                source={{ uri: groovEmbedComponentUrl }}
                 onError={(syntheticEvent) => {
                     const { nativeEvent } = syntheticEvent;
                     console.error('WebView error: ', nativeEvent);
@@ -81,10 +82,10 @@ export function GroovWebView({ externalUserId, appServerUri, authKey, apiKey, co
 }
 
 GroovWebView.propTypes = {
-    externalUserId: PropTypes.string.isRequired,
     appServerUri: PropTypes.string.isRequired,
     authKey: PropTypes.string.isRequired,
     apiKey: PropTypes.string.isRequired,
+    operationType: PropTypes.string.isRequired,
 };
 
 const styles = StyleSheet.create({

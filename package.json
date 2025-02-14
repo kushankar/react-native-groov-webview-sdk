@@ -1,6 +1,6 @@
 {
   "name": "react-native-groov-sdk",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "Groov sdk for the webview",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,12 @@
     "url": "https://github.com/kushankar/react-native-groov-sdk/issues"
   },
   "homepage": "https://github.com/kushankar/react-native-groov-sdk#readme",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "react-native-get-random-values": "~1.11.0",
+    "uuid": "^11.0.3",
+    "react-native-webview": "13.12.5"
+  },
   "peerDependencies": {
     "react": "18.3.1",
     "react-native": "0.76.5",

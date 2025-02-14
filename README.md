@@ -13,16 +13,16 @@ It's simple and easy to integrate. Please follow the below steps.
 	
 4. Invoke GroovWebView - Call GroovWebView component 
 	<GroovWebView
-            externalUserId={GrooWebViewConfig.externalUserId}
             appServerUri={GrooWebViewConfig.appServerUri}
             authKey={GrooWebViewConfig.authKey}
             apiKey={GrooWebViewConfig.apiKey}
-			containerStyle={{....}}
+            operationType={GrooWebViewConfig.operationType}
+            containerStyle={{....}}
         />
-		a. externalUserId - An identifier of the user
-		b. appServerUri - App server URI
-		c. authKey - Auth Key for the API (Example - x-api-key, bearer token, etc)
-		d. apiKey - API key for the Groov institution
+		a. appServerUri - App server URI
+		b. authKey - Auth Key for the API (Example - x-api-key, bearer token, etc)
+		c. apiKey - API key for the Groov institution
+        d. operationType - Rest method name (GET, POST or PUT)
 		e. containerStyle(Optional) - Users can customise the container style, if not provided it picks the default styling
 		
 Modal 
