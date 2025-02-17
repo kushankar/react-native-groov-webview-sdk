@@ -419,17 +419,3 @@ width: '100%',
 },
 
 });
-
-# 3\. Our npm documentation
-
-### NPM name/Path
-
-@wearegroov/react-native-embed
-
-### GitHub Repo reference
-
-*   https://github.com/wearegroov/react-native-embed
-
-### README Contents
-
-Same as in GitHub as above: [https://wearegroov.atlassian.net/wiki/spaces/solospace/pages/edit-v2/433127426#README-Contents](https://wearegroov.atlassian.net/wiki/spaces/solospace/pages/edit-v2/433127426#README-Contents)
