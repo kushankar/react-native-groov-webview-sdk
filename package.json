@@ -1,26 +1,28 @@
 {
-  "name": "react-native-groov-sdk",
-  "version": "0.0.8",
-  "description": "Groov sdk for the webview",
+  "name": "react-native-embed",
+  "version": "0.0.1",
+  "description": "Groov library for embedded react native component",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kushankar/react-native-groov-sdk.git"
+    "url": "https://github.com/wearegroov/react-native-embed"
   },
   "keywords": [
     "groov",
     "webview",
-    "sdk"
+    "library",
+    "react-native",
+    "embedded-finance"
   ],
-  "author": "uma shankar kathinokkula",
+  "author": "Groov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kushankar/react-native-groov-sdk/issues"
+    "url": "https://github.com/wearegroov/react-native-embed/issues"
   },
-  "homepage": "https://github.com/kushankar/react-native-groov-sdk#readme",
+  "homepage": "https://github.com/wearegroov/react-native-embed?tab=readme-ov-file#readme",
   "dependencies": {
     "axios": "^1.7.9",
     "react-native-get-random-values": "~1.11.0",
