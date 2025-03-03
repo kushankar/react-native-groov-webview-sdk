@@ -39,9 +39,9 @@ Navigate to the root directory of your React Native project. The rest of this se
 
 $ npm install @wearegroov/react-native-embed --save
 
-### Sample implementation
+### Sample implementation 1
 
-This section focusses on an example on how you would integrate the Library component above in your main app codebase:
+This section focuses on an example on how you would integrate the Library component above in your main app codebase:
 
     import ...;
     import ...;
@@ -57,6 +57,43 @@ This section focusses on an example on how you would integrate the Library compo
                 embedAppServerAuthType={GroovWebViewConfig.embedAppServerAuthType}
                 embedAppServerAuthValue={GroovWebViewConfig.embedAppServerAuthValue}
                 embedAppServerAPIMethodType={GroovWebViewConfig.embedAppServerAPIMethodType}
+                widgetFrameStyle={styles.groovWebViewContainer} //as an optional input if you wish to
+            />
+        </View>
+    );
+    
+    const styles = StyleSheet.create({
+        screen: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        //optional if you want to provide a custom styling
+        groovWebViewContainer: {
+            margin: 20,
+            borderWidth: 1,
+            borderColor: 'blue',
+            borderRadius: 10,
+            overflow: 'hidden',
+        },
+    });
+
+### Sample implementation 2
+
+This section focuses on an example on how you would integrate the Library component without implementing any backend code:
+
+    import ...;
+    import ...;
+    import { GroovWebView } from '@wearegroov/react-native-embed';
+    import * as GroovWebViewConfig from '../../../groov-webview-config';
+
+    //assume you want to toggle Groov widget on your app screen called PaymentsScreen,
+    //you would need to include rows starting <View... till ending with </View>
+    export const PaymentsScreen = () => (
+        <View style={styles.screen}>
+            <GroovWebView2
+                embedAppExternalUserId={GroovWebViewConfig.embedAppExternalUserId}
+                embedAppServerAuthValue={GroovWebViewConfig.embedAppServerAuthValue}
                 widgetFrameStyle={styles.groovWebViewContainer} //as an optional input if you wish to
             />
         </View>
