@@ -1,6 +1,6 @@
 {
   "name": "react-native-embed",
-  "version": "0.0.1",
+  "version": "0.0.13",
   "description": "Groov library for embedded react native component",
   "main": "index.js",
   "scripts": {
@@ -28,14 +28,5 @@
     "react-native-get-random-values": "~1.11.0",
     "uuid": "^11.0.3",
     "react-native-webview": "13.12.5"
-  },
-  "peerDependencies": {
-    "react": "18.3.1",
-    "react-native": "0.76.5",
-    "react-native-get-random-values": "~1.11.0",
-    "uuid": "^11.0.3",
-    "react-native-webview": "13.12.5",
-    "axios": "^1.7.9",
-    "@react-navigation/native": "^7.0.14"
   }
 }
